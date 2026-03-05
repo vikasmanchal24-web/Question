@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+text-align:center;
+font-family:Arial;
+margin-top:120px;
+background:#ffe6f0;
+overflow:hidden;
+}
+
+button{
+padding:15px 30px;
+font-size:18px;
+margin:20px;
+border:none;
+border-radius:10px;
+}
+
+#yes{
+background:#ff3b6b;
+color:white;
+}
+
+#no{
+background:gray;
+position:absolute;
+}
+
+.star{
+position:absolute;
+font-size:25px;
+animation:fall 3s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-100px)}
+100%{transform:translateY(100vh)}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Samu, tu dh ahes ka ❤️</h2>
+
+<button id="yes">Yes 💖</button>
+<button id="no">No 🙈</button>
+
+<script>
+
+var no=document.getElementById("no");
+var yes=document.getElementById("yes");
+
+function move(){
+var x=Math.random()*window.innerWidth;
+var y=Math.random()*window.innerHeight;
+
+no.style.left=x+"px";
+no.style.top=y+"px";
+}
+
+no.addEventListener("touchstart",move);
+no.addEventListener("mouseover",move);
+
+yes.onclick=function(){
+
+alert("Pata tha mujhe 😉");
+
+for(let i=0;i<30;i++){
+
+let star=document.createElement("div");
+star.innerHTML="🌟";
+star.className="star";
+star.style.left=Math.random()*100+"vw";
+star.style.animationDuration=(Math.random()*2+2)+"s";
+
+document.body.appendChild(star);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
